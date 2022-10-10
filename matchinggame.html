@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="matchinggame.js"></script>
+
+  <style>
+    #startScreen, #gameOver {
+      text-align: center;
+    }
+
+    button {
+      margin: 5px;
+    }
+
+    #display {
+      width: 100vw;
+      max-width: 100%;
+      height: 87vh;
+      max-height: 87%;
+      margin: auto;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    #cards {
+      border-collapse: separate;
+      width: 100%;
+      height: 100%;
+      border-spacing: 10px;
+      table-layout: fixed;
+    }
+
+    td {
+      border: solid;
+      border-radius: 25px;
+    }
+
+    canvas {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      width: 100%;
+      height: 100%;
+      border-radius: 25px;
+      display: block;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="startScreen">
+    <h1 style="font-size: 10em; margin-bottom: 5px;">Matching Game</h1>
+    <p style="font-size: 2em;">Match the cards in the fewest moves possible.</p>
+    <button onclick="startGame()" style="font: 2em 'Times New Roman', serif;">START</button>
+  </div>
+
+  <div id="gameScreen" style="display: none; text-align: center;">
+    <h1 id="countMoves" style="text-align: center;">Moves: 0</h1>
+    <div id="display">
+      <table id="cards">
+        <tr>
+          <td><canvas id="1" onclick="showSymbol(1)"></canvas></td>
+          <td><canvas id="2" onclick="showSymbol(2)"></canvas></td>
+          <td><canvas id="3" onclick="showSymbol(3)"></canvas></td>
+          <td><canvas id="4" onclick="showSymbol(4)"></canvas></td>
+          <td><canvas id="5" onclick="showSymbol(5)"></canvas></td>
+          <td><canvas id="6" onclick="showSymbol(6)"></canvas></td>
+        </tr>
+        <tr>
+          <td><canvas id="7" onclick="showSymbol(7)"></canvas></td>
+          <td><canvas id="8" onclick="showSymbol(8)"></canvas></td>
+          <td><canvas id="9" onclick="showSymbol(9)"></canvas></td>
+          <td><canvas id="10" onclick="showSymbol(10)"></canvas></td>
+          <td><canvas id="11" onclick="showSymbol(11)"></canvas></td>
+          <td><canvas id="12" onclick="showSymbol(12)"></canvas></td>
+        </tr>
+        <tr>
+          <td><canvas id="13" onclick="showSymbol(13)"></canvas></td>
+          <td><canvas id="14" onclick="showSymbol(14)"></canvas></td>
+          <td><canvas id="15" onclick="showSymbol(15)"></canvas></td>
+          <td><canvas id="16" onclick="showSymbol(16)"></canvas></td>
+          <td><canvas id="17" onclick="showSymbol(17)"></canvas></td>
+          <td><canvas id="18" onclick="showSymbol(18)"></canvas></td>
+        </tr>
+        <tr>
+          <td><canvas id="19" onclick="showSymbol(19)"></canvas></td>
+          <td><canvas id="20" onclick="showSymbol(20)"></canvas></td>
+          <td><canvas id="21" onclick="showSymbol(21)"></canvas></td>
+          <td><canvas id="22" onclick="showSymbol(22)"></canvas></td>
+          <td><canvas id="23" onclick="showSymbol(23)"></canvas></td>
+          <td><canvas id="24" onclick="showSymbol(24)"></canvas></td>
+        </tr>
+      </table>
+
+      <div id="gameOver" style="display: none;">
+        <p id="moveCount"></p>
+        <p id="bestMoveCount"></p>
+        <button onclick="startGame()" style="font: 1em 'Times New Roman', serif;">REPLAY</button>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
